@@ -22,8 +22,8 @@ OPENKIM_TEST_DRIVERS = {
 }
 
 # List of URLs of development Test Drivers to test
-DEVEL_TEST_DRIVERS = {"https://github.com/openkim-hackathons/VacancyFormationEnergyRelaxationVolume__TD_647413317626_002/archive/refs/tags/v0.0.0c.tar.gz":{},
-                     "https://github.com/openkim-hackathons/ground_state_structure/archive/refs/tags/v0.0.0c.tar.gz":{}}
+DEVEL_TEST_DRIVERS = {"https://github.com/openkim-hackathons/VacancyFormationEnergyRelaxationVolume__TD_647413317626_002/archive/refs/tags/v0.0.0d.tar.gz":{},
+                     "https://github.com/openkim-hackathons/ground_state_structure/archive/refs/tags/v0.0.0d.tar.gz":{}}
 
 MAX_URLLIB_ATTEMPTS = 10
 
