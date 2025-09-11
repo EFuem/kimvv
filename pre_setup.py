@@ -23,7 +23,7 @@ OPENKIM_TEST_DRIVERS = {
 
 # List of URLs of development Test Drivers to test
 DEVEL_TEST_DRIVERS = {"https://github.com/openkim-hackathons/VacancyFormationEnergyRelaxationVolume__TD_647413317626_002/archive/refs/tags/v0.0.0d.tar.gz":{},
-                     "https://github.com/openkim-hackathons/ground_state_structure/archive/refs/tags/v0.0.0d.tar.gz":{}}
+                     "https://github.com/openkim-hackathons/ground_state_structure/archive/refs/tags/v0.0.0e.tar.gz":{}}
 
 MAX_URLLIB_ATTEMPTS = 10
 
@@ -85,7 +85,7 @@ if __name__ == "__main__":
         move_driver(prefix, test_driver)
 
     # Download and untar development TDs
-    for test_driver in DEVEL_TEST_DRIVERS:
+    for j, test_driver in enumerate(DEVEL_TEST_DRIVERS):
         tmpfile = urlretrieve_with_retries(test_driver)
         # Extract it to a temporary directory
         with TemporaryDirectory() as tmpdir:
@@ -107,7 +107,11 @@ if __name__ == "__main__":
             if "extended-id" in kimspec:
                 td_name = "__".join(kimspec["extended-id"].split("__")[:-1])
             else:
-                td_name = "InProgress"
+                if j == 0:
+                    td_name = "VacancyFormationEnergyRelaxationVolume"
+                else:
+                    td_name = "GroundStateCrystalStructure"
+
 
             # Can easily end up with multiple InProgress
             if td_name in kimvv_test_drivers:
