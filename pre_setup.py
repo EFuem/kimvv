@@ -138,6 +138,8 @@ if __name__ == "__main__":
     # Should by now all be in directories named `kimvv/{test_driver}`
     for test_driver in kimvv_test_drivers:
         driver_path = os.path.join("kimvv", test_driver)
+        property_path = os.path.join(driver_path, "local_props")
+        os.system(f"cp {property_path}/*.edn test/local-props/")
         requirements_path = os.path.join(driver_path, "requirements.txt")
         if os.path.isfile(requirements_path):
             pyproject["tool"]["setuptools"]["dynamic"]["dependencies"]["file"].append(
